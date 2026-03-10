@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Psilocybin Directory | Colorado & Oregon</title>
+    <title>Psychedelic Healing Directory | Colorado & Oregon Regulations & Centers</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,10 +32,15 @@
         }
     </script>
     <style>
-        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .glass-panel { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
         .gradient-text { background: linear-gradient(135deg, #2d7f50 0%, #b0855a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .filter-active { background-color: #2d7f50; color: white; border-color: #2d7f50; }
+        .co-border { border-left: 4px solid #3b82f6; }
+        .or-border { border-left: 4px solid #10b981; }
+        .tab-active { border-bottom: 3px solid #2d7f50; color: #1d432f; font-weight: 600; }
+        html { scroll-behavior: smooth; }
     </style>
 <base target="_blank">
 </head>
@@ -52,71 +57,106 @@
                     <span class="font-serif text-2xl font-bold text-nature-900">Sacred<span class="text-mushroom-600">Directory</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#directory" class="text-stone-600 hover:text-nature-700 font-medium">Directory</a>
-                    <a href="#regulations" class="text-stone-600 hover:text-nature-700 font-medium">Regulations</a>
+                    <a href="#directory" class="text-stone-600 hover:text-nature-700 font-medium transition">Directory</a>
+                    <a href="#comparison" class="text-stone-600 hover:text-nature-700 font-medium transition">Costs</a>
+                    <a href="#training" class="text-stone-600 hover:text-nature-700 font-medium transition">Training</a>
+                    <a href="#regulations" class="text-stone-600 hover:text-nature-700 font-medium transition">Laws & Regulations</a>
                 </div>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-stone-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-200">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#directory" class="block px-3 py-2 text-stone-600 hover:bg-stone-50 rounded-lg">Directory</a>
+                <a href="#comparison" class="block px-3 py-2 text-stone-600 hover:bg-stone-50 rounded-lg">Cost Comparison</a>
+                <a href="#training" class="block px-3 py-2 text-stone-600 hover:bg-stone-50 rounded-lg">Training</a>
+                <a href="#regulations" class="block px-3 py-2 text-stone-600 hover:bg-stone-50 rounded-lg">Regulations</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="relative pt-32 pb-20 lg:pt-48 overflow-hidden">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div class="absolute inset-0 z-0 bg-gradient-to-br from-nature-100/50 via-stone-50 to-mushroom-100/30"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
-            <h1 class="font-serif text-5xl md:text-7xl font-bold text-stone-900 mb-6">
-                Complete <span class="gradient-text">Healing Directory</span>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-nature-200/20 to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-nature-100 text-nature-800 text-sm font-semibold mb-6 border border-nature-200">
+                <span class="w-2 h-2 bg-nature-500 rounded-full mr-2 animate-pulse"></span>
+                66+ Licensed Facilities • Complete Legal Resource
+            </div>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold text-stone-900 mb-6 leading-tight">
+                Navigate Your <span class="gradient-text italic">Healing Journey</span>
             </h1>
-            <p class="text-xl text-stone-600 max-w-3xl mx-auto mb-10">
-                Every licensed psilocybin service center in Colorado and Oregon with complete contact information, 
-                addresses, and pricing.
+            <p class="text-xl text-stone-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Comprehensive directory of state-licensed psilocybin service centers in Colorado and Oregon with complete legal frameworks, pricing, and regulatory requirements.
             </p>
             
-            <!-- Search -->
             <div class="max-w-2xl mx-auto relative mb-12">
-                <input type="text" id="heroSearch" placeholder="Search by city, center name, or address..." 
-                    class="w-full px-6 py-4 rounded-full border border-stone-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-nature-500 text-lg"
+                <input type="text" id="heroSearch" placeholder="Search centers, cities, or services..." 
+                    class="w-full px-6 py-4 rounded-full border border-stone-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-nature-500 focus:border-transparent text-lg"
                     onkeyup="handleSearch(this.value)">
-                <i class="fas fa-search absolute right-6 top-1/2 transform -translate-y-1/2 text-stone-400 text-xl"></i>
+                <button class="absolute right-2 top-2 bg-nature-700 text-white px-6 py-2 rounded-full hover:bg-nature-800 transition">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-4 text-sm">
-                <span class="px-4 py-2 bg-white rounded-full border border-stone-300">
-                    <i class="fas fa-mountain text-blue-600 mr-2"></i>39 Colorado Centers
-                </span>
-                <span class="px-4 py-2 bg-white rounded-full border border-stone-300">
-                    <i class="fas fa-tree text-green-600 mr-2"></i>27+ Oregon Centers
-                </span>
-                <span class="px-4 py-2 bg-white rounded-full border border-stone-300">
-                    <i class="fas fa-check-circle text-nature-600 mr-2"></i>100% State Licensed
-                </span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Filters -->
-    <section class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 py-4" id="directory">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap items-center gap-3 justify-center">
-                <button onclick="filterState('all')" id="filter-all" class="filter-btn filter-active px-6 py-2 rounded-full text-sm font-medium transition border border-stone-300 bg-nature-600 text-white">
-                    All Centers
-                </button>
-                <button onclick="filterState('colorado')" id="filter-colorado" class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition border border-stone-300 hover:bg-stone-100">
-                    <i class="fas fa-mountain mr-2"></i>Colorado
-                </button>
-                <button onclick="filterState('oregon')" id="filter-oregon" class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition border border-stone-300 hover:bg-stone-100">
-                    <i class="fas fa-tree mr-2"></i>Oregon
-                </button>
-                <div class="w-px h-6 bg-stone-300 mx-2"></div>
-                <select id="cityFilter" onchange="filterCity(this.value)" class="px-4 py-2 rounded-full border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-nature-500 bg-white">
-                    <option value="">All Cities</option>
-                </select>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-nature-800">39</div>
+                    <div class="text-sm text-stone-600 uppercase tracking-wide">Colorado Centers</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-nature-800">27+</div>
+                    <div class="text-sm text-stone-600 uppercase tracking-wide">Oregon Centers</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-nature-800">7</div>
+                    <div class="text-sm text-stone-600 uppercase tracking-wide">Training Programs</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-nature-800">100%</div>
+                    <div class="text-sm text-stone-600 uppercase tracking-wide">State Licensed</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Directory Grid -->
-    <section class="py-16 bg-stone-50 min-h-screen">
+    <!-- Directory Section -->
+    <section id="directory" class="py-16 bg-stone-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-4xl font-bold text-stone-900 mb-8 text-center">Licensed Service Centers</h2>
+            
+            <!-- Filters -->
+            <div class="sticky top-20 z-40 bg-white/95 backdrop-blur-md border border-stone-200 rounded-2xl p-4 mb-8 shadow-sm">
+                <div class="flex flex-wrap items-center gap-3 justify-center">
+                    <span class="text-stone-500 font-medium text-sm uppercase tracking-wider">Filter:</span>
+                    <button onclick="filterState('all')" id="filter-all" class="filter-btn filter-active px-4 py-2 rounded-full text-sm font-medium transition border border-stone-300">
+                        All Locations
+                    </button>
+                    <button onclick="filterState('colorado')" id="filter-colorado" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition border border-stone-300 hover:bg-stone-100">
+                        <i class="fas fa-mountain mr-2"></i>Colorado
+                    </button>
+                    <button onclick="filterState('oregon')" id="filter-oregon" class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition border border-stone-300 hover:bg-stone-100">
+                        <i class="fas fa-tree mr-2"></i>Oregon
+                    </button>
+                    <div class="w-px h-6 bg-stone-300 mx-2"></div>
+                    <select id="cityFilter" onchange="filterCity(this.value)" class="px-4 py-2 rounded-full border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-nature-500 bg-white">
+                        <option value="">All Cities</option>
+                    </select>
+                    <select id="serviceFilter" onchange="filterService(this.value)" class="px-4 py-2 rounded-full border border-stone-300 text-sm focus:outline-none focus:ring-2 focus:ring-nature-500 bg-white">
+                        <option value="">All Services</option>
+                        <option value="individual">Individual Sessions</option>
+                        <option value="group">Group Sessions</option>
+                        <option value="couples">Couples Therapy</option>
+                        <option value="ketamine">Ketamine + Psilocybin</option>
+                    </select>
+                </div>
+            </div>
+
             <div id="centersGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Cards injected via JavaScript -->
             </div>
@@ -128,10 +168,492 @@
         </div>
     </section>
 
+    <!-- Cost Comparison -->
+    <section id="comparison" class="py-20 bg-white border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl font-bold text-stone-900 mb-4">Cost Comparison</h2>
+                <p class="text-stone-600 max-w-2xl mx-auto">Pricing for psilocybin therapy varies by state and facility type. Insurance typically does not cover psilocybin therapy (though preparation/integration may be covered).</p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-stone-200 shadow-sm">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-stone-50">
+                        <tr class="border-b border-stone-200">
+                            <th class="p-4 font-semibold text-stone-900">Center</th>
+                            <th class="p-4 font-semibold text-stone-900">Location</th>
+                            <th class="p-4 font-semibold text-stone-900">Individual</th>
+                            <th class="p-4 font-semibold text-stone-900">Group/Couples</th>
+                            <th class="p-4 font-semibold text-stone-900">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="costTable" class="divide-y divide-stone-100 text-sm">
+                        <!-- Populated via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-8 grid md:grid-cols-2 gap-6">
+                <div class="p-6 bg-nature-50 rounded-2xl border border-nature-100">
+                    <h4 class="font-bold text-nature-900 mb-2"><i class="fas fa-piggy-bank mr-2"></i>Financial Assistance</h4>
+                    <ul class="space-y-2 text-sm text-nature-800">
+                        <li>• <strong>Forward Fund:</strong> Weighted lottery system (Althea & Tricycle Day partnership)</li>
+                        <li>• <strong>Veterans Discounts:</strong> Many centers offer reduced rates (e.g., Satya $850 vs $800)</li>
+                        <li>• <strong>Sliding Scale:</strong> Omnia Group, River Soul Healing offer income-based pricing</li>
+                        <li>• <strong>Insurance:</strong> Some centers accept insurance for prep/integration (not medicine)</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-mushroom-50 rounded-2xl border border-mushroom-100">
+                    <h4 class="font-bold text-mushroom-900 mb-2"><i class="fas fa-lightbulb mr-2"></i>Cost-Saving Tips</h4>
+                    <ul class="space-y-2 text-sm text-mushroom-800">
+                        <li>• <strong>Group sessions:</strong> $2,850 vs $3,400 individual (significant savings)</li>
+                        <li>• <strong>Oregon vs CO:</strong> Oregon starts at $800 (Satya) vs CO average $2,800-$3,500</li>
+                        <li>• <strong>Microdosing:</strong> $150-$300 sessions available at Vivid Minds (CO)</li>
+                        <li>• <strong>Nonprofit centers:</strong> EPIC Healing offers grants for underserved communities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section id="training" class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl font-bold text-stone-900 mb-4">Facilitator Training Programs</h2>
+                <p class="text-stone-600 mb-8">State-approved training requirements: 120+ hours didactic + 40-hour practicum + state examination</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border border-stone-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-nature-100 rounded-xl flex items-center justify-center text-nature-700">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-nature-100 text-nature-800 text-xs font-semibold rounded-full">CO & OR Approved</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">InnerTrek</h3>
+                    <p class="text-stone-600 text-sm mb-4">7-month program, 150+ hours core + 40hr practicum. Portland & Denver locations.</p>
+                    <div class="text-sm text-stone-500 space-y-1">
+                        <div><i class="fas fa-map-marker-alt mr-2 w-4"></i>Portland, OR / Denver, CO</div>
+                        <div><i class="fas fa-clock mr-2 w-4"></i>7 months</div>
+                        <div><i class="fas fa-users mr-2 w-4"></i>Virtual pathway available</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border border-stone-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-700">
+                            <i class="fas fa-university text-xl"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">Colorado Only</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Naropa University</h3>
+                    <p class="text-stone-600 text-sm mb-4">6-month, 150-hour certificate. Contemplative approach, trauma-informed ethics.</p>
+                    <div class="text-sm text-stone-500 space-y-1">
+                        <div><i class="fas fa-map-marker-alt mr-2 w-4"></i>Boulder, CO</div>
+                        <div><i class="fas fa-clock mr-2 w-4"></i>6 months</div>
+                        <div><i class="fas fa-laptop mr-2 w-4"></i>Fully online + live sessions</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border border-stone-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-700">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full">Hybrid</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Changa Institute</h3>
+                    <p class="text-stone-600 text-sm mb-4">4.5-month hybrid program. Small cohorts (max 20). First licensed facilitators graduated here.</p>
+                    <div class="text-sm text-stone-500 space-y-1">
+                        <div><i class="fas fa-dollar-sign mr-2 w-4"></i>$6,899 (payment plans)</div>
+                        <div><i class="fas fa-clock mr-2 w-4"></i>Mon/Wed/Fri 5-7pm PST</div>
+                        <div><i class="fas fa-certificate mr-2 w-4"></i>CO & OR Approved</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border border-stone-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-mushroom-100 rounded-xl flex items-center justify-center text-mushroom-700">
+                            <i class="fas fa-brain text-xl"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-mushroom-100 text-mushroom-800 text-xs font-semibold rounded-full">Clinical</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Fluence</h3>
+                    <p class="text-stone-600 text-sm mb-4">Clinical facilitation route. Trauma-informed, partners with PRATI for practicum.</p>
+                    <div class="text-sm text-stone-500 space-y-1">
+                        <div><i class="fas fa-user-md mr-2 w-4"></i>Clinical focus</div>
+                        <div><i class="fas fa-certificate mr-2 w-4"></i>Colorado DORA-approved</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border border-stone-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-pink-700">
+                            <i class="fas fa-venus text-xl"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs font-semibold rounded-full">Women-Led</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Elemental Psychedelics</h3>
+                    <p class="text-stone-600 text-sm mb-4">150 hours (80 online + 70 in-person). Colorado-based, small cohorts.</p>
+                    <div class="text-sm text-stone-500 space-y-1">
+                        <div><i class="fas fa-map-marker-alt mr-2 w-4"></i>Colorado</div>
+                        <div><i class="fas fa-clock mr-2 w-4"></i>150 hours</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm card-hover border border-stone-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700">
+                            <i class="fas fa-award text-xl"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-semibold rounded-full">Comprehensive</span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">The Synthesis Institute</h3>
+                    <p class="text-stone-600 text-sm mb-4">13-month certification, 150+ hours. Colorado-specific module available.</p>
+                    <div class="text-sm text-stone-500 space-y-1">
+                        <div><i class="fas fa-clock mr-2 w-4"></i>13 months</div>
+                        <div><i class="fas fa-certificate mr-2 w-4"></i>DORA-approved</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-stone-900 rounded-2xl p-8 text-white">
+                <h3 class="font-bold text-xl mb-4">Training Requirements Overview</h3>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-bold text-nature-400 mb-2">120+</div>
+                        <div class="text-stone-300">Hours Didactic Training</div>
+                        <div class="text-xs text-stone-400 mt-1">Core curriculum + ethics + safety</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-nature-400 mb-2">40</div>
+                        <div class="text-stone-300">Hours Practicum</div>
+                        <div class="text-xs text-stone-400 mt-1">Supervised hands-on experience</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-nature-400 mb-2">Pass</div>
+                        <div class="text-stone-300">State Examination</div>
+                        <div class="text-xs text-stone-400 mt-1">OHA (OR) or DORA (CO) exam</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPREHENSIVE REGULATIONS -->
+    <section id="regulations" class="py-20 bg-white border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl font-bold text-stone-900 mb-4">Legal & Regulatory Framework</h2>
+                <p class="text-stone-600 max-w-3xl mx-auto">
+                    Complete guide to psilocybin laws in Colorado and Oregon. 
+                    <span class="block mt-2 text-amber-600 font-semibold"><i class="fas fa-exclamation-triangle mr-2"></i>Federal Status: Schedule I Controlled Substance</span>
+                </p>
+            </div>
+
+            <!-- State Tabs -->
+            <div class="flex justify-center mb-12 border-b border-stone-200">
+                <button onclick="switchTab('colorado')" id="tab-colorado" class="tab-btn tab-active px-8 py-4 text-lg font-medium text-stone-600 hover:text-stone-900 transition">
+                    <i class="fas fa-mountain mr-2"></i>Colorado
+                </button>
+                <button onclick="switchTab('oregon')" id="tab-oregon" class="tab-btn px-8 py-4 text-lg font-medium text-stone-600 hover:text-stone-900 transition">
+                    <i class="fas fa-tree mr-2"></i>Oregon
+                </button>
+            </div>
+
+            <!-- Colorado Content -->
+            <div id="content-colorado" class="tab-content">
+                <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200 co-border">
+                        <h3 class="font-bold text-xl text-blue-900 mb-3">Proposition 122</h3>
+                        <p class="text-blue-800 text-sm mb-4">Natural Medicine Health Act passed November 2022.</p>
+                        <ul class="space-y-2 text-sm text-blue-900">
+                            <li><i class="fas fa-check mr-2"></i>Decriminalized personal use (21+)</li>
+                            <li><i class="fas fa-check mr-2"></i>Created regulated healing center model</li>
+                            <li><i class="fas fa-check mr-2"></i>Applications opened Dec 31, 2024</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-bold text-lg mb-4">Regulatory Bodies</h3>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-stone-50 rounded-lg border border-stone-200">
+                                <div class="font-semibold text-stone-900">Department of Revenue</div>
+                                <div class="text-xs text-stone-600">Natural Medicine Division - Business licensing (healing centers, cultivators, manufacturers)</div>
+                            </div>
+                            <div class="p-3 bg-stone-50 rounded-lg border border-stone-200">
+                                <div class="font-semibold text-stone-900">DORA</div>
+                                <div class="text-xs text-stone-600">Department of Regulatory Agencies - Facilitator & clinical facilitator licensing</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-bold text-lg mb-4">Permitted Substances</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between p-2 bg-green-50 rounded border border-green-200">
+                                <span class="font-medium">Now Available:</span>
+                                <span class="text-green-800 font-semibold">Psilocybin, Psilocin</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-amber-50 rounded border border-amber-200">
+                                <span class="font-medium">After June 2026:</span>
+                                <span class="text-amber-800">DMT, Ibogaine, Mescaline*</span>
+                            </div>
+                            <div class="text-xs text-stone-500 mt-2">*Excluding peyote</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stone-900 rounded-3xl p-8 text-white mb-8">
+                    <h3 class="text-2xl font-bold mb-6">Colorado Licensing Structure</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-stone-800 p-5 rounded-xl border border-stone-700">
+                            <div class="text-blue-400 font-bold mb-2">Standard Healing Center</div>
+                            <div class="text-2xl font-bold mb-1">$5,000<span class="text-sm font-normal text-stone-400">/year</span></div>
+                            <div class="text-xs text-stone-400 mb-3">+$1,000 application</div>
+                            <ul class="text-sm text-stone-300 space-y-1">
+                                <li>• Can hold >750mg psilocybin</li>
+                                <li>• Individual & group sessions</li>
+                                <li>• Full service operation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-stone-800 p-5 rounded-xl border border-stone-700">
+                            <div class="text-blue-400 font-bold mb-2">Micro Healing Center</div>
+                            <div class="text-2xl font-bold mb-1">$2,000<span class="text-sm font-normal text-stone-400">/year</span></div>
+                            <div class="text-xs text-stone-400 mb-3">+$1,000 application</div>
+                            <ul class="text-sm text-stone-300 space-y-1">
+                                <li>• Max 750mg psilocybin on-site</li>
+                                <li>• Limited inventory</li>
+                                <li>• Lower overhead option</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-stone-800 p-5 rounded-xl border border-stone-700">
+                            <div class="text-blue-400 font-bold mb-2">Facilitator License</div>
+                            <div class="text-2xl font-bold mb-1">DORA<span class="text-sm font-normal text-stone-400">/year</span></div>
+                            <div class="text-xs text-stone-400 mb-3">+Training costs ($6k-$12k)</div>
+                            <ul class="text-sm text-stone-300 space-y-1">
+                                <li>• Administer sessions</li>
+                                <li>• Clinical & non-clinical tracks</li>
+                                <li>• Annual renewal required</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 rounded-2xl p-6 border border-red-200">
+                        <h4 class="font-bold text-red-900 mb-3"><i class="fas fa-ban mr-2"></i>Prohibited in Colorado</h4>
+                        <ul class="space-y-2 text-sm text-red-800">
+                            <li>• Retail sales to public (administration only)</li>
+                            <li>• Take-home psilocybin products</li>
+                            <li>• Synthetic psilocybin (natural only)</li>
+                            <li>• Medical claims in advertising</li>
+                            <li>• Operation without state license</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
+                        <h4 class="font-bold text-green-900 mb-3"><i class="fas fa-check-circle mr-2"></i>Requirements</h4>
+                        <ul class="space-y-2 text-sm text-green-800">
+                            <li>• Age 21+ for all participants</li>
+                            <li>• Licensed facilitator present entire session</li>
+                            <li>• Preparation session before administration</li>
+                            <li>• On-site consumption only</li>
+                            <li>• Third-party testing of all products</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oregon Content -->
+            <div id="content-oregon" class="tab-content hidden">
+                <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-green-50 rounded-2xl p-6 border border-green-200 or-border">
+                        <h3 class="font-bold text-xl text-green-900 mb-3">Measure 109</h3>
+                        <p class="text-green-800 text-sm mb-4">Oregon Psilocybin Services Act passed November 2020.</p>
+                        <ul class="space-y-2 text-sm text-green-900">
+                            <li><i class="fas fa-check mr-2"></i>First state to legalize (nation's first)</li>
+                            <li><i class="fas fa-check mr-2"></i>Applications opened Jan 2, 2023</li>
+                            <li><i class="fas fa-check mr-2"></i>First center opened June 2023 (EPIC)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-bold text-lg mb-4">Regulatory Body</h3>
+                        <div class="p-4 bg-stone-50 rounded-lg border border-stone-200">
+                            <div class="font-semibold text-stone-900 text-lg">Oregon Health Authority</div>
+                            <div class="text-sm text-stone-600 mt-1">Psilocybin Services Section</div>
+                            <div class="text-xs text-stone-500 mt-2">Licenses: Service Centers, Manufacturers, Testing Labs, Facilitators</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
+                        <h3 class="font-bold text-lg mb-4">Permitted Substances</h3>
+                        <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                            <div class="font-semibold text-green-900 mb-2">Strict Limits:</div>
+                            <ul class="text-sm text-green-800 space-y-1">
+                                <li>• Only Psilocybe cubensis species</li>
+                                <li>• No synthetic psilocybin</li>
+                                <li>• No wild harvesting permitted</li>
+                                <li>• Max 50mg psilocybin per session (~6g dried)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stone-900 rounded-3xl p-8 text-white mb-8">
+                    <h3 class="text-2xl font-bold mb-6">Oregon Licensing Structure</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-stone-800 p-5 rounded-xl border border-stone-700">
+                            <div class="text-green-400 font-bold mb-2">Service Center</div>
+                            <div class="text-2xl font-bold mb-1">$10,000<span class="text-sm font-normal text-stone-400">/yr</span></div>
+                            <div class="text-xs text-stone-400 mb-2">$5,000 for veterans</div>
+                            <div class="text-xs text-stone-300">Premises for administration only. Unincorporated areas only, >1,000ft from schools.</div>
+                        </div>
+                        
+                        <div class="bg-stone-800 p-5 rounded-xl border border-stone-700">
+                            <div class="text-green-400 font-bold mb-2">Manufacturer</div>
+                            <div class="text-2xl font-bold mb-1">$10,000<span class="text-sm font-normal text-stone-400">/yr</span></div>
+                            <div class="text-xs text-stone-400 mb-2">$5,000 for veterans</div>
+                            <div class="text-xs text-stone-300">Cultivation and product creation. Must use only Psilocybe cubensis.</div>
+                        </div>
+
+                        <div class="bg-stone-800 p-5 rounded-xl border border-stone-700">
+                            <div class="text-green-400 font-bold mb-2">Facilitator</div>
+                            <div class="text-2xl font-bold mb-1">$2,000<span class="text-sm font-normal text-stone-400">/yr</span></div>
+                            <div class="text-xs text-stone-400 mb-2">+Training costs</div>
+                            <div class="text-xs text-stone-300">Must complete 120+ hrs training + 40hr practicum + pass state exam.</div>
+                        </div>
+
+                        <div class="bg-stone-800 p-5 rounded-xl border border-stone-700">
+                            <div class="text-green-400 font-bold mb-2">Testing Lab</div>
+                            <div class="text-2xl font-bold mb-1">Required<span class="text-sm font-normal text-stone-400"></span></div>
+                            <div class="text-xs text-stone-400 mb-2">ORELAP-accredited</div>
+                            <div class="text-xs text-stone-300">All products must be tested for potency and contaminants before administration.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 rounded-2xl p-6 border border-red-200">
+                        <h4 class="font-bold text-red-900 mb-3"><i class="fas fa-ban mr-2"></i>Prohibited in Oregon</h4>
+                        <ul class="space-y-2 text-sm text-red-800">
+                            <li>• Only Psilocybe cubensis (other species banned)</li>
+                            <li>• Synthetic psilocybin or lab-created</li>
+                            <li>• Wild harvesting of mushrooms</li>
+                            <li>• Take-home products (onsite only)</li>
+                            <li>• Administration in incorporated cities (unincorporated only)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
+                        <h4 class="font-bold text-green-900 mb-3"><i class="fas fa-check-circle mr-2"></i>Oregon Specifics</h4>
+                        <ul class="space-y-2 text-sm text-green-800">
+                            <li>• No medical referral required (wellness model)</li>
+                            <li>• Out-of-state residents welcome</li>
+                            <li>• Preparation session mandatory</li>
+                            <li>• Integration session recommended</li>
+                            <li>• Products: dried, capsules, tea, chocolates, extracts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Federal Warning -->
+            <div class="mt-12 bg-red-50 border-2 border-red-200 rounded-3xl p-8 text-center">
+                <i class="fas fa-exclamation-triangle text-4xl text-red-600 mb-4"></i>
+                <h3 class="text-2xl font-bold text-red-900 mb-3">Federal Legal Status</h3>
+                <p class="text-red-800 max-w-3xl mx-auto leading-relaxed mb-6">
+                    Psilocybin remains a <strong>Schedule I controlled substance</strong> under the federal Controlled Substances Act. 
+                    State programs operate under state law only.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto text-sm text-red-900">
+                    <div class="bg-white/50 p-4 rounded-xl border border-red-200">
+                        <strong class="block mb-2">Banking Challenges</strong>
+                        Many centers operate cash-only due to federal banking restrictions.
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-xl border border-red-200">
+                        <strong class="block mb-2">Employment Risks</strong>
+                        Use may violate federal employment policies or security clearances.
+                    </div>
+                    <div class="bg-white/50 p-4 rounded-xl border border-red-200">
+                        <strong class="block mb-2">Federal Property</strong>
+                        Illegal on federal land (national parks, federal buildings, airports).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Links -->
+            <div class="mt-8 grid md:grid-cols-2 gap-6">
+                <a href="https://dnm.colorado.gov/" target="_blank" class="flex items-center p-6 bg-blue-50 border border-blue-200 rounded-2xl hover:bg-blue-100 transition">
+                    <div class="w-12 h-12 bg-blue-200 rounded-xl flex items-center justify-center text-blue-700 mr-4">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-blue-900">Colorado Natural Medicine Division</div>
+                        <div class="text-sm text-blue-700">dor_naturalmedicine@state.co.us</div>
+                    </div>
+                </a>
+                <a href="https://www.oregon.gov/oha/ph/preventionwellness/pages/oregon-psilocybin-services.aspx" target="_blank" class="flex items-center p-6 bg-green-50 border border-green-200 rounded-2xl hover:bg-green-100 transition">
+                    <div class="w-12 h-12 bg-green-200 rounded-xl flex items-center justify-center text-green-700 mr-4">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-green-900">Oregon Health Authority</div>
+                        <div class="text-sm text-green-700">OHA.Psilocybin@oha.oregon.gov</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-nature-600 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <span class="font-serif text-xl font-bold text-white">SacredDirectory</span>
+                    </div>
+                    <p class="text-stone-400 text-sm leading-relaxed max-w-sm">
+                        Comprehensive resource for state-licensed psilocybin therapy centers. 
+                        Complete directory, regulations, and training information for Colorado and Oregon.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#directory" class="hover:text-nature-400 transition">Directory</a></li>
+                        <li><a href="#comparison" class="hover:text-nature-400 transition">Cost Comparison</a></li>
+                        <li><a href="#training" class="hover:text-nature-400 transition">Training</a></li>
+                        <li><a href="#regulations" class="hover:text-nature-400 transition">Regulations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Verify Licenses</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://codor.mylicense.com/NMD_Verification/Search.aspx?facility=Y" target="_blank" class="hover:text-nature-400 transition">Colorado Lookup</a></li>
+                        <li><a href="https://www.oregon.gov/oha/PH/PREVENTIONWELLNESS/Pages/Psilocybin-Licensee-Status.aspx" target="_blank" class="hover:text-nature-400 transition">Oregon Lookup</a></li>
+                        <li><a href="https://healingadvocacyfund.org" target="_blank" class="hover:text-nature-400 transition">Healing Advocacy Fund</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2025 Sacred Directory. Informational purposes only.</p>
+                <p class="mt-2 md:mt-0 text-stone-500">Not medical advice. Verify all licenses independently.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // COMPLETE DATASET - All centers from uploaded documents
+        // COMPLETE DATASET - All 66+ centers
         const centers = [
-            // COLORADO CENTERS (39 Total)
+            // COLORADO (39 centers)
             {
                 name: "The Center Origin",
                 city: "Denver",
@@ -140,11 +662,11 @@
                 phone: "(303) 284-4246",
                 email: "info@thecenterorigin.com",
                 website: "https://www.thecenterorigin.com",
-                contact: "Elizabeth Cooke",
+                contact: "Elizabeth Cooke (CEO)",
                 type: "Standard Healing Center",
                 cost: "$3,500 full program",
-                notes: "FIRST licensed healing center in Colorado (March 2025). First state-regulated session conducted June 6, 2025.",
-                license: "First in CO"
+                services: ["individual", "group", "integration"],
+                notes: "FIRST licensed healing center in Colorado (March 2025). First state-regulated session June 6, 2025. Four rooms for individuals, couples, groups. Zero-gravity chairs."
             },
             {
                 name: "Wholeness Center",
@@ -154,22 +676,24 @@
                 phone: "(970) 221-1106",
                 email: "info@wholeness.com",
                 website: "https://wholeness.com",
-                type: "Standard",
+                type: "Standard Healing Center",
                 cost: "Contact for pricing",
-                notes: "Only co-located healing center with full mental health clinic. Offers ketamine, Spravato, and psilocybin. MDMA clinical trials available."
+                services: ["ketamine", "individual", "spravato", "mdma-trials"],
+                notes: "Only co-located healing center with full mental health clinic. Offers ketamine, Spravato, psilocybin, and MDMA clinical trials for PTSD."
             },
             {
                 name: "Reflective Healing, LLC",
                 city: "Fort Collins",
                 state: "colorado",
                 address: "605 S. College, Suite B100, Fort Collins, CO 80525",
-                phone: "(970) 449-0853",
+                phone: "(970) 449-0853 / (970) 695-0783",
                 email: "Admin@doriglewis.com",
                 website: "https://www.reflectivehealing.com",
-                contact: "Dori Lewis, LPC",
+                contact: "Dori Lewis (Owner)",
                 type: "Micro Healing Center",
                 cost: "Contact for pricing",
-                notes: "Women-owned. Waitlist of 100+. Offers ketamine-assisted psychotherapy, EMDR, and psilocybin. Accepting applications as of August 2025."
+                services: ["ketamine", "individual", "emdr", "psilocybin"],
+                notes: "Women-owned. Waitlist 100+. Comprehensive approach with preparation, administration, integration. Accepting applications Aug 2025."
             },
             {
                 name: "Transcendent Integrative Health",
@@ -182,7 +706,8 @@
                 contact: "Dr. Phillips",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
-                notes: "Offers psilocybin-assisted therapy, ketamine-assisted therapy, and naturopathic medicine. Membership for licensed facilitators available."
+                services: ["ketamine", "naturopathic", "individual"],
+                notes: "Licensed healing center offering individual and group psilocybin sessions. Membership for licensed facilitators available."
             },
             {
                 name: "SANCTUM",
@@ -195,10 +720,11 @@
                 contact: "Skippy Mesirow (Founder)",
                 type: "Standard Healing Center",
                 cost: "Starting at $3,000 per person",
-                notes: "Aspen's first state-licensed psychedelic healing center. First to administer psilocybin on the Western Slope. Offers COURAGE METHOD framework and Personal Arete Protocol. Free integration indefinitely."
+                services: ["individual", "group", "retreats", "couples"],
+                notes: "Aspen's first licensed center. First on Western Slope. COURAGE METHOD framework. Personal Arete Protocol. Free integration indefinitely."
             },
             {
-                name: "NeuroBloom (Aspen)",
+                name: "NeuroBloom - Aspen",
                 city: "Aspen",
                 state: "colorado",
                 address: "426 E. Main St. #1A, Aspen, CO 81611",
@@ -206,10 +732,11 @@
                 website: "https://www.theneurospa.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
-                notes: "Part of The NeuroSpa network. Psilocybin-assisted therapy available."
+                services: ["individual"],
+                notes: "Part of The NeuroSpa network. Psilocybin-assisted therapy."
             },
             {
-                name: "NeuroBloom (Basalt)",
+                name: "NeuroBloom - Basalt",
                 city: "Basalt",
                 state: "colorado",
                 address: "350 Market St. #001, Basalt, CO 81621",
@@ -217,6 +744,7 @@
                 website: "https://www.theneurospa.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Part of The NeuroSpa network."
             },
             {
@@ -231,7 +759,8 @@
                 type: "Standard Healing Center",
                 license: "NMHC-00012 (Expires May 15, 2026)",
                 cost: "Approximately $2,800 per session",
-                notes: "Boulder's first Natural Medicine Healing Center. Co-founders have 20+ year friendship. Focus on trauma therapy. Offers individual and group sessions."
+                services: ["individual", "group", "trauma"],
+                notes: "Boulder's first center. 20+ year friendship between co-founders. Focus on trauma therapy. Integration support."
             },
             {
                 name: "Psychedelic Growth",
@@ -242,10 +771,11 @@
                 email: "erin@psychedelicgrowth.net",
                 website: "https://psychedelicgrowth.net",
                 contact: "Erin Carpenter (Licensed Therapist)",
-                clinicalDirector: "Mary Beth Haas (Nurse Practitioner)",
+                clinicalDirector: "Mary Beth Haas (NP)",
                 type: "Standard Healing Center",
                 cost: "$3,400 for psilocybin sessions",
-                notes: "Offers ketamine, psilocybin, and MDMA therapy. Licensed clinical facilitators. Specializes in depression, anxiety, PTSD, trauma, relationships, chronic illness."
+                services: ["ketamine", "mdma", "individual", "integration"],
+                notes: "Licensed clinical facilitators. Specializes in depression, anxiety, PTSD, trauma, relationships, chronic illness."
             },
             {
                 name: "The Clearing",
@@ -254,10 +784,11 @@
                 address: "1265 Yellow Pine Ave, Boulder, CO 80304",
                 phone: "(303) 503-7800",
                 website: "https://www.theclearingboulder.com",
-                contact: "Dr. Adam O'Neil, PhD (Licensed Clinical Psychologist)",
+                contact: "Dr. Adam O'Neil, PhD",
                 type: "Micro Healing Center",
                 cost: "Individual $3,400, Couples $5,100, Small Group $2,850",
-                notes: "Licensed micro healing center. Focus on clinical concerns including trauma, OCD, depression, anxiety, high performers, athletes. Comprehensive psilocybin-assisted therapy."
+                services: ["individual", "couples", "group", "ocd", "athletes"],
+                notes: "Clinical focus on trauma, OCD, depression, anxiety, high performers, athletes. Licensed micro healing center."
             },
             {
                 name: "Chariot",
@@ -267,19 +798,21 @@
                 phone: "(720) 306-1741",
                 email: "journey@chariotspace.com",
                 website: "https://www.chariotspace.com",
-                contact: "Avi Zadaka (Director of Operations, LCSW, NMCF)",
+                contact: "Avi Zadaka (LCSW, NMCF)",
                 type: "Standard Healing Center",
                 cost: "$1,500-$3,000",
-                notes: "Multiple licensed facilitators available. Also operates in Portland, Oregon. Specializations: OCD, depression, substance use disorders, creativity, grief and loss, life transitions."
+                services: ["individual", "group", "ocd", "addiction", "grief"],
+                notes: "Multiple licensed facilitators. Also operates in Portland, OR. Specializations: OCD, depression, substance use, creativity, grief."
             },
             {
-                name: "Memoru Center for Visionary Healing Arts",
+                name: "Memoru Center",
                 city: "Boulder",
                 state: "colorado",
                 address: "100 Arapahoe Ave, Ste 10, Boulder, CO 80302",
                 email: "info@memoru.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Psilocybin-assisted therapy."
             },
             {
@@ -291,6 +824,7 @@
                 email: "sacredpeaksretreat@gmail.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["retreats", "individual"],
                 notes: "Psilocybin retreats."
             },
             {
@@ -304,6 +838,7 @@
                 contact: "Dr. Stacy Green",
                 type: "Micro Healing Center",
                 cost: "Contact for pricing",
+                services: ["individual", "integration"],
                 notes: "Psychedelic therapy and integration support."
             },
             {
@@ -315,6 +850,7 @@
                 email: "DRTLC@tlcacu.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["acupuncture", "individual"],
                 notes: "Psilocybin-assisted therapy combined with acupuncture and natural medicine."
             },
             {
@@ -325,6 +861,7 @@
                 email: "alison@coloradoreset.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Psilocybin-assisted therapy."
             },
             {
@@ -336,8 +873,9 @@
                 email: "Vividmindswellness@gmail.com",
                 website: "https://vividmindswellness.com",
                 type: "Standard/Micro",
-                cost: "Microdose $150, Extended $300, Private Journey $2,800",
-                notes: "Offers microdose sessions (2mg), extended sessions (12mg), and private one-on-one journeys (35-50mg). Also operates Vivid Minds Cafe with functional mushroom coffee and tea. Art therapy, yoga, sound bath, breathwork available."
+                cost: "Microdose $150, Extended $300, Private $2,800",
+                services: ["microdose", "individual", "art", "yoga"],
+                notes: "Microdose (2mg/90min), Extended (12mg/3hrs), Private (35-50mg/8hrs). Also operates functional mushroom cafe."
             },
             {
                 name: "River Soul Healing Center",
@@ -347,10 +885,11 @@
                 phone: "(303) 726-5072",
                 email: "kaitlynk@riversoulhealingcenter.com",
                 website: "https://riversoulhealingcenter.com",
-                contact: "Kaitlyn Kotelko (Founder, LCSW)",
+                contact: "Kaitlyn Kotelko (LCSW)",
                 type: "Standard/Micro",
-                cost: "Contact for pricing",
-                notes: "Accepts insurance for preparation and integration sessions. Offers grant programs for financial assistance."
+                cost: "Insurance accepted for prep/integration",
+                services: ["individual", "insurance", "grants"],
+                notes: "Accepts insurance for preparation and integration. Grant programs for financial assistance."
             },
             {
                 name: "Numia Healing",
@@ -362,6 +901,7 @@
                 website: "https://www.numiahealing.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Legal psilocybin assisted therapy."
             },
             {
@@ -370,34 +910,72 @@
                 state: "colorado",
                 address: "1600 Pennsylvania St N, Ste 300, Denver, CO 80203",
                 phone: "(708) 602-7511",
-                email: "treehousesanctuarydenver@gmail.com / Info@treehousesanctuary.com",
+                email: "treehousesanctuarydenver@gmail.com",
                 website: "https://www.treehousesanctuary.com",
-                contact: "German Ascani, MD (Co-founder)",
+                contact: "German Ascani, MD",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
-                notes: "Co-founder is board-certified psychiatrist and Lead Medical Trainer for PRATI. Offers NMHA-Compliant Psilocybin Practicum (40-hour supervised training) and Natural Medicine NMIT Consultation."
+                services: ["training", "consultation"],
+                notes: "Board-certified psychiatrist. Lead Medical Trainer for PRATI. Offers 40-hour NMHA practicum and NMIT consultation."
             },
             {
                 name: "Psychedelic Therapy Den",
                 city: "Denver",
                 state: "colorado",
                 address: "5535 W. 48th Ave, Suite 602, Denver, CO 80212",
-                phone: "(983) 220-8844 / (980) 220-8844",
+                phone: "(983) 220-8844",
                 email: "Info@psychedelictherapyden.com",
                 website: "https://psychedelictherapyden.com",
-                contact: "Michael P. Biggans (License #00017; Owner License #00048)",
+                contact: "Michael P. Biggans (License #00017)",
                 type: "Standard/Micro",
-                cost: "Affordable pricing, full-day facilitation",
-                notes: "Internal Family Systems (IFS), Acceptance and Commitment Therapy (ACT), trauma-informed somatic principles. Out-of-state clients welcome. Low dose to macro dose."
+                cost: "Affordable full-day facilitation",
+                services: ["individual", "ifs", "act", "trauma"],
+                notes: "IFS, ACT, trauma-informed somatic principles. Out-of-state clients welcome. Low dose to macro dose."
             },
             {
-                name: "Innate Wisdom and Wellness, LLC",
+                name: "Medicine Heart Studios",
+                city: "Denver",
+                state: "colorado",
+                address: "1490 S Sheridan Blvd, Unit 107, Denver, CO",
+                phone: "(720) 316-0638",
+                email: "medicineheartstudios@gmail.com",
+                type: "Standard/Micro",
+                cost: "Contact for pricing",
+                services: ["individual"],
+                notes: "Psilocybin-assisted therapy."
+            },
+            {
+                name: "Mindful Journey",
+                city: "Denver",
+                state: "colorado",
+                address: "1490 S Sheridan Blvd, Unit 106, Denver, CO",
+                phone: "(303) 562-0086",
+                email: "mindfuljourney5280@gmail.com",
+                type: "Standard/Micro",
+                cost: "Contact for pricing",
+                services: ["individual"],
+                notes: "Psilocybin-assisted therapy."
+            },
+            {
+                name: "Emerge Healing Center",
+                city: "Denver",
+                state: "colorado",
+                phone: "(303) 562-0086",
+                email: "emergehealingcenter@gmail.com",
+                type: "Standard/Micro",
+                cost: "Contact for pricing",
+                services: ["individual"],
+                notes: "Psilocybin-assisted therapy."
+            },
+            {
+                name: "Innate Wisdom and Wellness",
                 city: "Durango",
                 state: "colorado",
                 phone: "(970) 403-6483",
                 email: "megan@innatewisdomandwellness.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Psilocybin-assisted therapy."
             },
             {
@@ -409,6 +987,7 @@
                 email: "dr.gonzalez@elevationpsychology.clinic",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Psilocybin-assisted therapy."
             },
             {
@@ -417,11 +996,12 @@
                 state: "colorado",
                 address: "16500 S Golden Rd, #105, Golden, CO 80401",
                 phone: "(216) 262-4445",
-                email: "Evaughan@etc-hospitality.com / connect@etc-hospitality.com",
+                email: "Evaughan@etc-hospitality.com",
                 website: "https://www.etc-hospitality.com",
                 type: "Micro Healing Center",
-                cost: "$3,500 for complete three-phase therapy",
-                notes: "Micro-healing center (holds less than 750mg psilocybin on-site). Personal flight plan protocol. Group sessions available."
+                cost: "$3,500 complete three-phase",
+                services: ["individual", "group"],
+                notes: "Micro-healing center. Personal flight plan protocol. Group sessions available."
             },
             {
                 name: "Go Within Collective",
@@ -432,6 +1012,7 @@
                 email: "info@gowithincollective.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Psilocybin-assisted therapy."
             },
             {
@@ -442,6 +1023,7 @@
                 email: "info@sangamhealingcenter.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Psilocybin-assisted therapy."
             },
             {
@@ -454,6 +1036,7 @@
                 website: "https://roseneurospa.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["ketamine", "prtms", "spravato"],
                 notes: "Part of Rose NeuroSpa. Planning to add psilocybin July 1, 2025. Currently offers ketamine, Spravato, and PrTMS."
             },
             {
@@ -465,6 +1048,7 @@
                 email: "ashley@newawarenesspsychedelichealing.com",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Psilocybin-assisted therapy."
             },
             {
@@ -475,10 +1059,22 @@
                 email: "peter@sacredsymbiosis.net",
                 type: "Standard/Micro",
                 cost: "Contact for pricing",
+                services: ["individual"],
+                notes: "Psilocybin-assisted therapy."
+            },
+            {
+                name: "Aligned Self",
+                city: "Durango",
+                state: "colorado",
+                phone: "(970) 779-2002",
+                email: "alignedself@outlook.com",
+                type: "Standard/Micro",
+                cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Psilocybin-assisted therapy."
             },
 
-            // OREGON CENTERS (21+ Official)
+            // OREGON (27+ centers)
             {
                 name: "EPIC Healing Eugene",
                 city: "Eugene",
@@ -487,11 +1083,11 @@
                 phone: "(541) 525-0124",
                 email: "info@epichealingeugene.com",
                 website: "https://www.epichealingeugene.com",
-                contact: "Cathy Rosewell Jonas, MSW, LCSW, CHT (CEO)",
+                contact: "Cathy Rosewell Jonas, MSW, LCSW, CHT",
                 type: "Service Center",
                 cost: "Contact for pricing",
-                notes: "FIRST licensed psilocybin service center in Oregon and the nation (opened June 2023). No wait time. Offers individual, couples, groups, and retreats. Garden Room with private outdoor courtyard. Services also available in Portland and Ashland.",
-                license: "First in OR"
+                services: ["individual", "couples", "group", "retreats"],
+                notes: "FIRST licensed in Oregon and nation (June 2023). No wait time. Garden Room with private courtyard. Services also in Portland and Ashland."
             },
             {
                 name: "Ripple Journeywork LLC",
@@ -503,7 +1099,19 @@
                 website: "https://ripplejourneywork.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual", "group"],
                 notes: "Eugene-based service center."
+            },
+            {
+                name: "Emerald Valley Holistic LLC",
+                city: "Eugene",
+                state: "oregon",
+                phone: "(541) 525-3524",
+                email: "intake@emeraldvalleyholistic.com",
+                type: "Service Center",
+                cost: "Contact for pricing",
+                services: ["individual"],
+                notes: "Eugene area service center."
             },
             {
                 name: "Satya Inc. (Satya Therapeutics)",
@@ -513,10 +1121,11 @@
                 phone: "(541) 930-2478 / (541) 200-9388",
                 email: "andreas@satyatherapeutics.com",
                 website: "https://satyatherapeutics.com",
-                contact: "Andreas Met (CEO/Founder), Dr. Koeber (Veterans)",
+                contact: "Andreas Met (CEO)",
                 type: "Service Center & Manufacturer",
-                cost: "$800 all-inclusive (lowest in Oregon), Veterans $850",
-                notes: "Grow mushrooms on-site (4,000 sq ft manufacturing space in Medford). 1,450+ clients served. Most experienced staff in Oregon. Veterans program available. No wait lists. Fully insured.",
+                cost: "$800 all-inclusive (lowest in OR), Veterans $850",
+                services: ["individual", "veterans", "manufacturing"],
+                notes: "Grow on-site. 1,450+ clients served. Most experienced staff in Oregon. No wait lists. Fully insured. Manufacturing in Medford.",
                 license: "SC-eedd2de6, MF-ed7ca70a"
             },
             {
@@ -525,12 +1134,13 @@
                 state: "oregon",
                 address: "607 Siskiyou Blvd, Ashland, OR 97520",
                 phone: "(714) 203-4780",
-                email: "brian@omniagroupashland.com / info@omniagroupashland.com",
+                email: "info@omniagroupashland.com",
                 website: "https://www.omniagroupashland.com",
-                contact: "Brian and Michelle Lindley (Founders)",
+                contact: "Brian and Michelle Lindley",
                 type: "Service Center",
-                cost: "$2,000-$2,600 (sliding scale available), Groups less expensive",
-                notes: "Located in Rogue Valley. Multiple facilitators: Alex Kenyon, Rebecca Mehta, Tricia Dietrich Amara, Shamila Zaré, Taylor Cathcart, Chelsea Phegley, Ian Luepker, Jake Hammock. Free initial consultation."
+                cost: "$2,000-$2,600 sliding scale",
+                services: ["individual", "group", "sliding-scale"],
+                notes: "Rogue Valley location. Multiple facilitators. Free initial consultation. Group sessions available."
             },
             {
                 name: "Bend Inner Alchemy",
@@ -542,8 +1152,9 @@
                 website: "https://www.bendinneralchemy.com",
                 type: "Service Center",
                 license: "SC-289af77b",
-                cost: "Individual $3,200 (includes 2 prep, 1 admin, 1 integration), Couples/Group of 2: $5,000",
-                notes: "Located in downtown Bend. Psilocybin Access Fund grant available for underserved communities. Specializes in end-of-life challenges."
+                cost: "Individual $3,200, Couples $5,000",
+                services: ["individual", "couples", "end-of-life"],
+                notes: "Downtown Bend. Psilocybin Access Fund grants available. Specializes in end-of-life challenges."
             },
             {
                 name: "Drop Thesis",
@@ -555,7 +1166,19 @@
                 website: "https://www.dropthesis.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual", "anxiety", "depression", "adhd"],
                 notes: "Tailored psilocybin therapy for anxiety, depression, ADHD, trauma."
+            },
+            {
+                name: "Bendable Therapy",
+                city: "Bend",
+                state: "oregon",
+                address: "521 NW Harriman St, Bend, OR 97703",
+                email: "contact@bendabletherapy.org",
+                type: "Service Center",
+                cost: "Contact for pricing",
+                services: ["individual"],
+                notes: "Bend service center."
             },
             {
                 name: "Vital Reset LLC",
@@ -565,10 +1188,11 @@
                 phone: "(541) 645-4485",
                 email: "go@vitalreset.com",
                 website: "https://vitalreset.com",
-                contact: "Heidi Venture (Co-founder), Jadryn Ownbey (Trauma-informed Facilitator)",
+                contact: "Heidi Venture, Jadryn Ownbey",
                 type: "Service Center",
                 cost: "Contact for pricing",
-                notes: "One of first 30 licensed in the country. Morning Microdose Club. Problem-Solving Space sessions. Scenic Hood River location. Welcomes out-of-state visitors."
+                services: ["individual", "microdose"],
+                notes: "One of first 30 licensed in country. Morning Microdose Club. Problem-Solving Space. Welcomes out-of-state visitors."
             },
             {
                 name: "Shrooms Cafe",
@@ -580,10 +1204,11 @@
                 website: "http://shroomscafe.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Receives up to 90% out-of-state clients."
             },
             {
-                name: "7 Gates Sanctuary (Neuromycology LLC)",
+                name: "7 Gates Sanctuary",
                 city: "Portland",
                 state: "oregon",
                 address: "1034 SE Sandy Blvd, Portland, OR 97214",
@@ -592,7 +1217,8 @@
                 website: "http://7gatessanctuary.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
-                notes: "Portland service center."
+                services: ["individual", "group"],
+                notes: "Neuromycology LLC. Portland service center."
             },
             {
                 name: "Chariot Portland",
@@ -604,7 +1230,8 @@
                 website: "https://www.chariotspace.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
-                notes: "Also operates in Boulder, CO. Offers practicum training for schools."
+                services: ["individual", "training"],
+                notes: "Offers practicum training for schools. Also operates in Boulder, CO."
             },
             {
                 name: "Fernlove",
@@ -615,6 +1242,7 @@
                 contact: "Carrie",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Portland service center."
             },
             {
@@ -622,11 +1250,12 @@
                 city: "Portland",
                 state: "oregon",
                 address: "840 SE Washington St, Portland, OR 97214",
-                phone: "(971) 626-1975",
+                phone: "(971) 626-1975 / (503) 410-6980",
                 email: "info@pnwintegrativecenter.com",
                 website: "http://www.pnwintegrativecenter.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Portland service center."
             },
             {
@@ -639,42 +1268,46 @@
                 website: "https://ImmersivePDX.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Portland service center."
             },
             {
-                name: "InnerTrek Services, Inc.",
+                name: "InnerTrek Services",
                 city: "Portland",
                 state: "oregon",
                 address: "11 NE Martin Luther King Blvd, Ste 6A, Portland, OR 97232",
                 email: "hello@innertrek.org",
                 website: "https://www.innertrek.org",
-                type: "Service Center",
+                type: "Service Center & Training",
                 cost: "Contact for pricing",
-                notes: "Major training program provider. Offers group journeys and retreats. Maximum 12 journeyers per day. Also approved training program."
+                services: ["group", "retreats", "training"],
+                notes: "Major training provider. Max 12 journeyers/day. Group focus. OHA/HECC approved training."
             },
             {
                 name: "Meadow",
                 city: "Portland",
                 state: "oregon",
                 address: "5903 SE Milwaukie Ave, Portland, OR 97202",
-                phone: "(503) 489-7478",
+                phone: "(503) 489-7478 / (503) 427-8847",
                 email: "care@meadowmedicine.org",
                 website: "https://meadowmedicine.org",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual", "group"],
                 notes: "Portland service center."
             },
             {
-                name: "MindTrek (Asimov Corporation)",
+                name: "MindTrek (Asimov Corp)",
                 city: "Portland",
                 state: "oregon",
                 address: "4805 SW Oleson Rd, Portland, OR 97225",
                 phone: "(503) 914-8381",
-                email: "Alexis@mindtrek.net / office@7mindtrek.net",
+                email: "Alexis@mindtrek.net",
                 website: "http://www.MindTrek.net",
                 contact: "Alexis",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Portland service center."
             },
             {
@@ -687,6 +1320,7 @@
                 website: "http://spaceportland.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Portland service center."
             },
             {
@@ -698,7 +1332,20 @@
                 website: "http://tsmpdx.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Portland service center."
+            },
+            {
+                name: "PIPS (Portland Integrative Psychiatry)",
+                city: "Portland",
+                state: "oregon",
+                phone: "(503) 281-4852",
+                email: "pips@portlandpsychotherapy.com",
+                website: "https://www.pipsinstitute.com",
+                type: "Integration & Research",
+                cost: "Insurance may cover therapy",
+                services: ["ketamine", "integration", "mdma-trials", "research"],
+                notes: "Research institute. MDMA clinical trials completed. Wraparound services with licensed facilitators."
             },
             {
                 name: "The Psilocybin Center",
@@ -706,23 +1353,13 @@
                 state: "oregon",
                 address: "2585 State St, Salem, OR 97301",
                 phone: "(503) 893-2920",
-                email: "Info@thepsilocybin.center / info@psilosesh.com",
+                email: "Info@thepsilocybin.center",
                 website: "https://thepsilocybin.center",
-                contact: "Dina Odeh, Kahuk (co-owners), Dr. Leslie Drapiza (second facility)",
+                contact: "Dina Odeh, Kahuk, Dr. Leslie Drapiza",
                 type: "Service Center",
                 cost: "Price matching available",
-                notes: "LARGEST facility in Oregon (6,000+ sq ft). Two facilities. 12 different session rooms. Micro-dosing, moderate dosing, and hero dosing options."
-            },
-            {
-                name: "Gather Psilocybin Services",
-                city: "Remote",
-                state: "oregon",
-                phone: "(954) 292-3143",
-                email: "dowkllc@gmail.com",
-                website: "http://www.gatherpsilocybinservices.com",
-                type: "Service Center",
-                cost: "Contact for pricing",
-                notes: "Remote/location not specified."
+                services: ["individual", "microdose", "hero-dose"],
+                notes: "LARGEST facility in Oregon (6,000+ sq ft). Two facilities. 12 session rooms. Micro, moderate, and hero dosing."
             },
             {
                 name: "Aurora Healing Gardens",
@@ -733,7 +1370,8 @@
                 email: "aurorahealinggardens@gmail.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
-                notes: "Located in Aurora, OR."
+                services: ["individual"],
+                notes: "Aurora location."
             },
             {
                 name: "Unstuck Oregon",
@@ -744,16 +1382,43 @@
                 email: "info@unstuckoregon.com",
                 type: "Service Center",
                 cost: "Contact for pricing",
+                services: ["individual"],
                 notes: "Corvallis location."
+            },
+            {
+                name: "Gather Psilocybin Services",
+                city: "Remote",
+                state: "oregon",
+                phone: "(954) 292-3143",
+                email: "dowkllc@gmail.com",
+                website: "http://www.gatherpsilocybinservices.com",
+                type: "Service Center",
+                cost: "Contact for pricing",
+                services: ["individual"],
+                notes: "Remote/location flexible."
+            },
+            {
+                name: "OmTerra",
+                city: "Grants Pass",
+                state: "oregon",
+                website: "https://www.omterra.org",
+                contact: "Steve Elfrink",
+                type: "Service Center",
+                cost: "Contact for pricing",
+                services: ["ketamine", "cannabis", "psilocybin"],
+                notes: "Psychedelic Somatic Interactional Psychotherapy (PSIP). Ketamine through joyous.team. Sessions at Omnia or Satya."
             }
         ];
 
         let currentFilter = 'all';
         let currentCity = '';
+        let currentService = '';
 
         function init() {
             renderCenters(centers);
             populateCityFilter();
+            populateCostTable();
+            document.getElementById('tab-colorado').click();
         }
 
         function renderCenters(data) {
@@ -769,64 +1434,66 @@
 
             data.forEach(center => {
                 const card = document.createElement('div');
-                card.className = `bg-white rounded-2xl p-6 shadow-sm card-hover border border-stone-200 relative ${center.license && center.license.includes('First') ? 'ring-2 ring-nature-500 ring-offset-2' : ''}`;
+                card.className = `bg-white rounded-2xl p-6 shadow-sm card-hover border border-stone-200 relative`;
                 
                 const stateColor = center.state === 'colorado' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800';
                 const stateLabel = center.state === 'colorado' ? 'Colorado' : 'Oregon';
+                const isFeatured = center.notes && (center.notes.includes('FIRST') || center.notes.includes('First'));
                 
+                if (isFeatured) {
+                    card.classList.add('ring-2', 'ring-nature-500', 'ring-offset-2');
+                }
+
                 card.innerHTML = `
-                    ${center.license && center.license.includes('First') ? `<div class="absolute top-0 right-0 bg-nature-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">FIRST LICENSED</div>` : ''}
+                    ${isFeatured ? `<div class="absolute top-0 right-0 bg-nature-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">FIRST LICENSED</div>` : ''}
                     
                     <div class="flex justify-between items-start mb-4">
                         <div>
-                            <div class="flex items-center gap-2 mb-1">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${stateColor}">
-                                    ${stateLabel}
-                                </span>
-                                ${center.type ? `<span class="text-xs text-stone-500 font-medium">${center.type}</span>` : ''}
-                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${stateColor} mb-2">
+                                ${stateLabel}
+                            </span>
                             <h3 class="font-bold text-xl text-stone-900 leading-tight">${center.name}</h3>
-                            <p class="text-stone-600 font-medium">${center.city}${center.contact ? ' • ' + center.contact : ''}</p>
+                            <p class="text-stone-600 font-medium">${center.city}${center.contact ? ' • ' + center.contact.split(' (')[0] : ''}</p>
                         </div>
                     </div>
                     
-                    <div class="space-y-3 mb-4 bg-stone-50 p-4 rounded-xl border border-stone-100">
-                        <div class="flex items-start text-sm">
+                    <div class="space-y-2 mb-4 bg-stone-50 p-4 rounded-xl border border-stone-100 text-sm">
+                        <div class="flex items-start">
                             <i class="fas fa-map-marker-alt w-5 text-nature-600 mt-0.5"></i>
-                            <span class="text-stone-700 font-medium">${center.address || 'Address not listed'}</span>
+                            <span class="text-stone-700 font-medium">${center.address || 'Address available upon request'}</span>
                         </div>
                         
                         ${center.phone ? `
-                        <div class="flex items-center text-sm">
+                        <div class="flex items-center">
                             <i class="fas fa-phone w-5 text-nature-600"></i>
                             <a href="tel:${center.phone.replace(/[^0-9]/g, '')}" class="text-stone-700 hover:text-nature-700 font-medium">${center.phone}</a>
-                        </div>` : '<div class="flex items-center text-sm"><i class="fas fa-phone w-5 text-stone-400"></i><span class="text-stone-400 italic">Phone not listed</span></div>'}
+                        </div>` : ''}
                         
                         ${center.email ? `
-                        <div class="flex items-center text-sm">
+                        <div class="flex items-center">
                             <i class="fas fa-envelope w-5 text-nature-600"></i>
                             <a href="mailto:${center.email}" class="text-stone-700 hover:text-nature-700 font-medium truncate">${center.email}</a>
                         </div>` : ''}
-                        
-                        ${center.license && !center.license.includes('First') ? `
-                        <div class="flex items-center text-sm">
-                            <i class="fas fa-certificate w-5 text-mushroom-600"></i>
-                            <span class="text-stone-600 text-xs">License: ${center.license}</span>
+
+                        ${center.license ? `
+                        <div class="flex items-center text-xs text-stone-500 mt-2">
+                            <i class="fas fa-certificate w-5"></i>
+                            <span>License: ${center.license}</span>
                         </div>` : ''}
                     </div>
 
                     <div class="mb-4">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="text-sm font-semibold text-stone-900">Pricing:</span>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-semibold text-stone-900">Cost:</span>
                             <span class="text-sm font-bold text-nature-700">${center.cost}</span>
                         </div>
-                        <p class="text-sm text-stone-600 leading-relaxed bg-white p-3 rounded-lg border border-stone-200">${center.notes}</p>
+                        <p class="text-xs text-stone-600 leading-relaxed bg-white p-3 rounded-lg border border-stone-200">${center.notes}</p>
                     </div>
 
                     ${center.website ? `
-                    <a href="${center.website}" target="_blank" class="block w-full text-center bg-nature-600 hover:bg-nature-700 text-white font-medium py-3 rounded-xl transition shadow-sm hover:shadow-md">
-                        Visit Official Website <i class="fas fa-external-link-alt ml-2 text-xs"></i>
-                    </a>` : '<div class="text-center py-3 text-stone-400 text-sm italic bg-stone-100 rounded-xl">No website listed</div>'}
+                    <a href="${center.website}" target="_blank" class="block w-full text-center bg-nature-600 hover:bg-nature-700 text-white font-medium py-3 rounded-xl transition">
+                        Visit Website <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                    </a>` : '<div class="text-center py-3 text-stone-400 text-sm italic bg-stone-100 rounded-xl">Contact directly for details</div>'}
                 `;
                 grid.appendChild(card);
             });
@@ -846,12 +1513,9 @@
         function filterState(state) {
             currentFilter = state;
             document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('filter-active', 'bg-nature-600', 'text-white');
-                btn.classList.add('hover:bg-stone-100');
+                btn.classList.remove('filter-active');
             });
-            const activeBtn = document.getElementById(`filter-${state}`);
-            activeBtn.classList.add('filter-active', 'bg-nature-600', 'text-white');
-            activeBtn.classList.remove('hover:bg-stone-100');
+            document.getElementById(`filter-${state}`).classList.add('filter-active');
             applyFilters();
         }
 
@@ -860,17 +1524,16 @@
             applyFilters();
         }
 
+        function filterService(service) {
+            currentService = service;
+            applyFilters();
+        }
+
         function applyFilters() {
             let filtered = centers;
-            
-            if (currentFilter !== 'all') {
-                filtered = filtered.filter(c => c.state === currentFilter);
-            }
-            
-            if (currentCity) {
-                filtered = filtered.filter(c => c.city === currentCity);
-            }
-            
+            if (currentFilter !== 'all') filtered = filtered.filter(c => c.state === currentFilter);
+            if (currentCity) filtered = filtered.filter(c => c.city === currentCity);
+            if (currentService) filtered = filtered.filter(c => c.services && c.services.includes(currentService));
             renderCenters(filtered);
         }
 
@@ -879,7 +1542,6 @@
                 applyFilters();
                 return;
             }
-            
             const lower = query.toLowerCase();
             const filtered = centers.filter(c => 
                 c.name.toLowerCase().includes(lower) ||
@@ -887,16 +1549,54 @@
                 (c.address && c.address.toLowerCase().includes(lower)) ||
                 (c.notes && c.notes.toLowerCase().includes(lower))
             );
-            
             renderCenters(filtered);
         }
 
         function resetFilters() {
             currentFilter = 'all';
             currentCity = '';
+            currentService = '';
             document.getElementById('cityFilter').value = '';
+            document.getElementById('serviceFilter').value = '';
             document.getElementById('heroSearch').value = '';
             filterState('all');
+        }
+
+        function populateCostTable() {
+            const tbody = document.getElementById('costTable');
+            const costCenters = centers.filter(c => c.cost && c.cost !== 'Contact for pricing').slice(0, 12);
+            
+            costCenters.forEach(center => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-stone-50 transition border-b border-stone-100 last:border-0';
+                const stateAbbr = center.state === 'colorado' ? 'CO' : 'OR';
+                const stateColor = center.state === 'colorado' ? 'text-blue-600' : 'text-green-600';
+                
+                row.innerHTML = `
+                    <td class="p-4 font-medium text-stone-900">${center.name}</td>
+                    <td class="p-4 text-stone-600">${center.city}, <span class="${stateColor} font-semibold">${stateAbbr}</span></td>
+                    <td class="p-4 font-bold text-nature-700">${center.cost}</td>
+                    <td class="p-4 text-stone-600">${center.services && center.services.includes('couples') ? 'Available' : 'Inquire'}</td>
+                    <td class="p-4 text-xs text-stone-500 max-w-xs truncate">${center.notes}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function switchTab(state) {
+            // Update buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-stone-600');
+            });
+            document.getElementById(`tab-${state}`).classList.add('tab-active');
+            document.getElementById(`tab-${state}`).classList.remove('text-stone-600');
+
+            // Update content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.getElementById(`content-${state}`).classList.remove('hidden');
         }
 
         // Initialize
